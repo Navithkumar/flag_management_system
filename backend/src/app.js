@@ -3,6 +3,7 @@ import express from 'express';
 import morgan from 'morgan';
 import errorMiddleware from './middlewares/error.middleware.js';
 import authRoutes from './routes/auth.routes.js';
+import featureRoutes from './routes/feature.routes.js';
 import superAdminRoutes from './routes/superAdmin.routes.js';
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(
 app.use(morgan('dev'));
 app.use('/api/auth', authRoutes);
 app.use('/api/super-admin', superAdminRoutes);
+app.use('/api/features', featureRoutes);
 app.use(errorMiddleware);
 
 export default app;

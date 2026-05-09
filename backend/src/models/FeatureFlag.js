@@ -27,3 +27,5 @@ const featureFlagSchema = new mongoose.Schema(
 );
 
 featureFlagSchema.index({ key: 1, organizationId: 1 }, { unique: true });
+
+export default mongoose.model('Features', featureFlagSchema);
