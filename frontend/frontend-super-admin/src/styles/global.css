@@ -1,0 +1,35 @@
+body {
+    background: #f5f7fb;
+    font-family: Arial, sans-serif;
+}
+
+.auth-wrapper {
+    min-height: 100vh;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 12px;
+    border: none;
+}
+
+.dashboard-title {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.form-control {
+    height: 48px;
+    border-radius: 8px;
+}
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.card {
+    border-radius: 12px;
+    border: none;
+}
