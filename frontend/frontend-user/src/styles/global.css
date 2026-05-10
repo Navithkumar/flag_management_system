@@ -1,0 +1,52 @@
+body {
+    background: #f5f7fb;
+    font-family: Arial, sans-serif;
+}
+
+.home-wrapper {
+    min-height: 100vh;
+}
+
+.checker-card {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 14px;
+    border: none;
+}
+
+.checker-card h2 {
+    font-weight: 700;
+}
+
+.form-control {
+    height: 48px;
+    border-radius: 8px;
+}
+
+.btn {
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.result-box {
+    padding: 16px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.result-enabled {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.result-disabled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.card {
+    border-radius: 14px;
+}
