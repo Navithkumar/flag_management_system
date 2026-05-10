@@ -1,0 +1,163 @@
+body {
+    background-color: #f5f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.auth-wrapper {
+    min-height: 100vh;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    border: none;
+    border-radius: 12px;
+}
+
+.auth-card h2 {
+    font-weight: 700;
+}
+
+.auth-card .form-control {
+    height: 48px;
+    border-radius: 8px;
+}
+
+.auth-card .btn {
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.custom-navbar {
+    background: white;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 14px 24px;
+}
+
+.custom-navbar h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logout-btn {
+    border-radius: 8px;
+}
+
+.dashboard-wrapper {
+    padding: 30px;
+}
+
+.dashboard-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.feature-form-card {
+    border: none;
+    border-radius: 12px;
+}
+
+.feature-form-card .form-control {
+    height: 48px;
+    border-radius: 8px;
+}
+
+.feature-form-card .btn {
+    height: 48px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.feature-grid {
+    margin-top: 30px;
+}
+
+.feature-card {
+    border: none;
+    border-radius: 12px;
+    transition: 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+}
+
+.feature-title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.feature-status {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.status-enabled {
+    color: green;
+    font-weight: 700;
+}
+
+.status-disabled {
+    color: red;
+    font-weight: 700;
+}
+
+.feature-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.feature-actions .btn {
+    border-radius: 8px;
+}
+
+.loader-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.not-found-wrapper {
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+.not-found-card {
+    border: none;
+    border-radius: 14px;
+    padding: 50px;
+}
+
+.not-found-title {
+    font-size: 100px;
+    font-weight: 800;
+}
+
+.not-found-subtitle {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.back-home-btn {
+    border-radius: 8px;
+    padding: 12px 20px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-wrapper {
+        padding: 20px;
+    }
+
+    .dashboard-title {
+        font-size: 24px;
+    }
+
+    .feature-actions {
+        flex-direction: column;
+    }
+}
