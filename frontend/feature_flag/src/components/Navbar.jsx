@@ -16,7 +16,7 @@ const Navbar = () => {
         <nav className="navbar">
             <h2>Feature Flags</h2>
 
-            <button onClick={handleLogout}>Logout</button>
+            <button className="btn btn-dark" onClick={handleLogout}>Logout</button>
         </nav>
     );
 };

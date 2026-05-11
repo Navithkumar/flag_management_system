@@ -9,6 +9,10 @@ const Dashboard = () => {
 
     const [featureKey, setFeatureKey] = useState('');
 
+    const [editingId, setEditingId] = useState(null);
+
+    const [editingKey, setEditingKey] = useState('');
+
     const [loading, setLoading] = useState(false);
 
     const fetchFeatures = async () => {
@@ -60,6 +64,26 @@ const Dashboard = () => {
         }
     };
 
+    const updateFeature = async (id) => {
+        if (!editingKey.trim()) {
+            return alert('Feature key required');
+        }
+
+        try {
+            await api.put(`/features/${id}`, {
+                key: editingKey,
+            });
+
+            setEditingId(null);
+
+            setEditingKey('');
+
+            fetchFeatures();
+        } catch (error) {
+            alert(error.response?.data?.message || 'Feature update failed');
+        }
+    };
+
     const deleteFeature = async (id) => {
         try {
             await api.delete(`/features/${id}`);
@@ -102,7 +126,44 @@ const Dashboard = () => {
                     {features.map((feature) => (
                         <div className="col-md-4 mb-4" key={feature._id}>
                             <div className="card shadow-sm feature-card p-3">
-                                <h3 className="feature-title">{feature.key}</h3>
+                                {editingId === feature._id ? (
+                                    <div className="mb-3">
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            value={editingKey}
+                                            onChange={(e) =>
+                                                setEditingKey(e.target.value)
+                                            }
+                                        />
+
+                                        <div className="d-flex gap-2 mt-2">
+                                            <button
+                                                className="btn btn-success btn-sm"
+                                                onClick={() =>
+                                                    updateFeature(feature._id)
+                                                }
+                                            >
+                                                Save
+                                            </button>
+
+                                            <button
+                                                className="btn btn-secondary btn-sm"
+                                                onClick={() => {
+                                                    setEditingId(null);
+
+                                                    setEditingKey('');
+                                                }}
+                                            >
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <h3 className="feature-title">
+                                        {feature.key}
+                                    </h3>
+                                )}
 
                                 <p className="feature-status">
                                     Status:
@@ -125,6 +186,17 @@ const Dashboard = () => {
                                         onClick={() => toggleFeature(feature)}
                                     >
                                         Toggle
+                                    </button>
+
+                                    <button
+                                        className="btn btn-primary btn-sm"
+                                        onClick={() => {
+                                            setEditingId(feature._id);
+
+                                            setEditingKey(feature.key);
+                                        }}
+                                    >
+                                        Edit
                                     </button>
 
                                     <button

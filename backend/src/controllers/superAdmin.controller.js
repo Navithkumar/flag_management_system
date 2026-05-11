@@ -32,8 +32,8 @@ export const createOrganization = async (req, res) => {
 
     const organization = await Organization.create({ name });
 
-    return res.status(201).json({
-        success: true,
+    return successResponse(res, {
+        message: 'organization Created successfully',
         data: organization,
     });
 };
@@ -41,8 +41,8 @@ export const createOrganization = async (req, res) => {
 export const getOrganizations = async (req, res) => {
     const organizations = await Organization.find().sort({ createdAt: -1 });
 
-    return res.json({
-        success: true,
+    return successResponse(res, {
+        message: 'organization fetched successfully',
         data: organizations,
     });
 };
